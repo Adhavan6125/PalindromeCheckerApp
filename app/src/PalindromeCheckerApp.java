@@ -14,25 +14,22 @@
  */
 import java .util.Scanner;
 public class PalindromeCheckerApp {
-    /**
-     Application entry point.
-     This is the first method executed by the JVM
-     when the program starts.
-     @param args Command-Line arguments
-     */
-    public static void main(String[] args)
-    {
-        Scanner sc = new Scanner (System.in);
-        System.out.println("Input Text:");
-        String input = sc.next();
-        boolean ispalindrome=true;
-        int n = input.length();
-        for(int i=0;i<n/2;i++){
-            if(input.charAt(i)!=input.charAt(n-1-i)){
-                ispalindrome=false;
-                break;
+        /**
+         * Application entry point for UC3.
+         * @param args Command-line arguments
+         */
+        public static void main(String[] args) {
+            String input = "madam"; // Example input string
+            String reversedInput = "";
+
+            for (int i = input.length() - 1; i >= 0; i--) {
+                reversedInput += input.charAt(i);
+            }
+
+            if (input.equals(reversedInput)) {
+                System.out.println(input + " is a palindrome.");
+            } else {
+                System.out.println(input + " is not a palindrome.");
             }
         }
-        System.out.println("is it a palindrome?"+ispalindrome);
     }
-}
