@@ -16,24 +16,37 @@ import java.util.*;
 
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
-        String input = "level";
-        // Create a LinkedList to store characters
-        LinkedList<Character> list = new LinkedList<>();
-        // Add each character to the Linked list
-        for (char c : input.toCharArray()) {
-            list.add(c);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("--- Palindrome Checker App ---");
+        System.out.print("Enter a string to check: ");
+        String input = scanner.nextLine();
+
+        // Strengthening core concepts: Using recursion for validation
+        if (isPalindrome(input)) {
+            System.out.println("'" + input + "' is a palindrome.");
+        } else {
+            System.out.println("'" + input + "' is NOT a palindrome.");
         }
-        // Flag to track palindrome state
-        boolean isPalindrome = true;
-        // Compare until only one or zero elements remain
-        while (list.size() > 1) {
-            if (list.removeFirst() != list.removeLast()) {
-                isPalindrome = false;
-                break;
-            }
+        scanner.close();
+    }
+
+    /**
+     * UC9: Recursive Palindrome Checker
+     * Goal: Check palindrome using recursion.
+     */
+    public static boolean isPalindrome(String s) {
+        // Base Condition 1: An empty string or single character is a palindrome
+        if (s.length() <= 1) {
+            return true;
         }
-        System.out.println("Input: " + input);
-        System.out.println("Is Palindrome? ");
-        System.out.println(isPalindrome);
+
+        // Recursive Step: Compare start & end characters [Flow Step 1]
+        if (s.charAt(0) == s.charAt(s.length() - 1)) {
+            // Recursive call with smaller subproblem (the middle substring)
+            return isPalindrome(s.substring(1, s.length() - 1));
+        }
+
+        // Base Condition 2: Characters don't match, not a palindrome [Flow Step 2]
+        return false;
     }
 }
