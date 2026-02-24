@@ -19,7 +19,7 @@ public class PalindromeCheckerApp {
         String input = "refer";
 
 // Create a Deque to store characters
-        Deque<Character> deque = new ArrayDeque<>();
+        Deque<Character> deque =new ArrayDeque<>();
 
 // Add each character to the deque
         for (char c : input.toCharArray()) {
