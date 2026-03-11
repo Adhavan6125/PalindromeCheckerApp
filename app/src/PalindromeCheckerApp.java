@@ -26,6 +26,7 @@ class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
+
         String input = "level";
 
         // Inject strategy at runtime
