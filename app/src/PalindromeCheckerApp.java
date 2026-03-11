@@ -21,7 +21,7 @@
  * @author Adhavan6125
  * @version 12.0
  */
-
+import java.util.*;
 class PalindromeCheckerApp {
 
     public static void main(String[] args) {
